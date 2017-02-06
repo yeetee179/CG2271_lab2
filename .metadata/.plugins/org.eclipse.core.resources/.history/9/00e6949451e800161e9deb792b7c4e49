@@ -1,0 +1,25 @@
+#include <Arduino.h>
+#define PIN_LED 6
+#define PIN_PTTM 0
+
+void setup() {
+	pinMode(PIN_LED, OUTPUT);
+}
+
+int remap(int val){
+	int revised_val =0;
+	revised_val = val/1023*255;
+	return val;
+}
+
+
+void loop() {
+	int val;
+	int revised_val;
+	val = analogRead(PIN_PTTM);
+	revised_val = remap(val);
+	analogWrite(PIN_LED, val);
+	delay(500);
+
+}
+

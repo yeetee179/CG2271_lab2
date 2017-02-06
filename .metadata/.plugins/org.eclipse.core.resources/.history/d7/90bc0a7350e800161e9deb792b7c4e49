@@ -1,0 +1,16 @@
+#include <Arduino.h>
+#define PIN_LED 6
+#define PIN_PTTM 0
+
+void setup() {
+	pinMode(PIN_LED, OUTPUT);
+}
+
+void loop() {
+	int val;
+	val = analogRead(PIN_PTTM);
+	analogWrite(PIN_LED, val);
+	delay(500);
+	printf("%d", val );
+}
+
