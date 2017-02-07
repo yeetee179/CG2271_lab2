@@ -32,6 +32,8 @@ c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../..
                               ./arduino/Print.o (__divsf3)
 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(divsf3x.o)
                               c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(divsf3.o) (__divsf3x)
+c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
+                              ./remapTouch.o (__fixsfsi)
 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
                               ./arduino/Print.o (__fixunssfsi)
 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(floatsisf.o)
@@ -122,6 +124,10 @@ c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../..
                               ./arduino/WString.o (__utoa)
 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o)
                               c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(utoa.o) (__utoa_ncheck)
+c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(printf.o)
+                              ./remapTouch.o (printf)
+c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+                              c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(printf.o) (vfprintf)
 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(dtoa_prf.o)
                               c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(dtostrf.o) (dtoa_prf)
 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strtod.o)
@@ -132,8 +138,18 @@ c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../..
                               c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(isspace.o) (__ctype_isfalse)
 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strncasecmp_P.o)
                               c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strtod.o) (strncasecmp_P)
+c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+                              c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o) (strnlen_P)
+c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strnlen.o)
+                              c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o) (strnlen)
 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strrev.o)
                               c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(ultoa_ncheck.o) (strrev)
+c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(fputc.o)
+                              c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o) (fputc)
+c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(iob.o)
+                              c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(printf.o) (__iob)
+c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
+                              c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o) (__ultoa_invert)
 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(errno.o)
                               c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strtod.o) (errno)
 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_mulshisi3.o)
@@ -149,6 +165,7 @@ Common symbol       size              file
 errno               0x2               c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(errno.o)
 __brkval            0x2               c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(malloc.o)
 __flp               0x2               c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(malloc.o)
+__iob               0x6               c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(iob.o)
 
 Discarded input sections
 
@@ -524,6 +541,14 @@ Discarded input sections
  .text.shiftIn  0x00000000       0x76 ./arduino/wiring_shift.o
  .text.shiftOut
                 0x00000000       0x76 ./arduino/wiring_shift.o
+ .text          0x00000000        0x0 ./remapTouch.o
+ .bss           0x00000000        0x0 ./remapTouch.o
+ .rodata.str1.1
+                0x00000000        0x4 ./remapTouch.o
+ .text.startup.main
+                0x00000000       0x22 ./remapTouch.o
+ .text.remapTouch
+                0x00000000       0x38 ./remapTouch.o
  .text          0x00000000        0x0 ./touch_sensor.o
  .bss           0x00000000        0x0 ./touch_sensor.o
  .text          0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_mulsi3.o)
@@ -708,6 +733,10 @@ Discarded input sections
  .bss           0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(divsf3x.o)
  .text.avr-libc.fplib
                 0x00000000       0xdc c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+ .text          0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
+ .text.avr-libc.fplib
+                0x00000000        0xe c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
  .text          0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
  .bss           0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
  .text.avr-libc.fplib
@@ -889,6 +918,14 @@ Discarded input sections
  .bss           0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o)
  .text.avr-libc
                 0x00000000       0x34 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o)
+ .text          0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(printf.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(printf.o)
+ .text.avr-libc
+                0x00000000       0x2c c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(printf.o)
+ .text          0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+ .text.avr-libc
+                0x00000000      0x3a4 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
  .text          0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(dtoa_prf.o)
  .bss           0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(dtoa_prf.o)
  .text.avr-libc
@@ -911,10 +948,29 @@ Discarded input sections
  .bss           0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strncasecmp_P.o)
  .text.avr-libc
                 0x00000000       0x30 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strncasecmp_P.o)
+ .text          0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+ .text.avr-libc
+                0x00000000       0x16 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+ .text          0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strnlen.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strnlen.o)
+ .text.avr-libc
+                0x00000000       0x16 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strnlen.o)
  .text          0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strrev.o)
  .bss           0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strrev.o)
  .text.avr-libc
                 0x00000000       0x20 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strrev.o)
+ .text          0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(fputc.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(fputc.o)
+ .text.avr-libc
+                0x00000000       0x70 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(fputc.o)
+ .text          0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(iob.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(iob.o)
+ COMMON         0x00000000        0x6 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(iob.o)
+ .text          0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
+ .text.avr-libc
+                0x00000000       0xbc c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
  .text          0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(errno.o)
  .bss           0x00000000        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(errno.o)
  COMMON         0x00000000        0x2 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(errno.o)
@@ -1003,6 +1059,7 @@ LOAD ./arduino/wiring_analog.o
 LOAD ./arduino/wiring_digital.o
 LOAD ./arduino/wiring_pulse.o
 LOAD ./arduino/wiring_shift.o
+LOAD ./remapTouch.o
 LOAD ./touch_sensor.o
 LOAD c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a
 LOAD c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a
@@ -1103,7 +1160,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xc28
+.text           0x00000000      0xc80
  *(.vectors)
  .vectors       0x00000000       0x68 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5/crtatmega328p.o
                 0x00000000                __vector_default
@@ -1167,7 +1224,7 @@ END GROUP
  *(.init5)
  *(.init5)
  *(.init6)
- .init6         0x000000e6       0x14 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_ctors.o)
+ .init6         0x000000e6       0x16 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_ctors.o)
                 0x000000e6                __do_global_ctors
  *(.init6)
  *(.init7)
@@ -1175,157 +1232,157 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x000000fa        0x4 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5/crtatmega328p.o
+ .init9         0x000000fc        0x8 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5/crtatmega328p.o
  *(.init9)
  *(.text)
- .text          0x000000fe        0x2 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5/crtatmega328p.o
-                0x000000fe                __vector_22
-                0x000000fe                __vector_24
-                0x000000fe                __vector_12
-                0x000000fe                __bad_interrupt
-                0x000000fe                __vector_6
-                0x000000fe                __vector_3
-                0x000000fe                __vector_23
-                0x000000fe                __vector_25
-                0x000000fe                __vector_11
-                0x000000fe                __vector_13
-                0x000000fe                __vector_17
-                0x000000fe                __vector_5
-                0x000000fe                __vector_4
-                0x000000fe                __vector_9
-                0x000000fe                __vector_21
-                0x000000fe                __vector_15
-                0x000000fe                __vector_8
-                0x000000fe                __vector_14
-                0x000000fe                __vector_10
-                0x000000fe                __vector_20
-                0x00000100                . = ALIGN (0x2)
+ .text          0x00000104        0x4 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5/crtatmega328p.o
+                0x00000104                __vector_22
+                0x00000104                __vector_24
+                0x00000104                __vector_12
+                0x00000104                __bad_interrupt
+                0x00000104                __vector_6
+                0x00000104                __vector_3
+                0x00000104                __vector_23
+                0x00000104                __vector_25
+                0x00000104                __vector_11
+                0x00000104                __vector_13
+                0x00000104                __vector_17
+                0x00000104                __vector_5
+                0x00000104                __vector_4
+                0x00000104                __vector_9
+                0x00000104                __vector_21
+                0x00000104                __vector_15
+                0x00000104                __vector_8
+                0x00000104                __vector_14
+                0x00000104                __vector_10
+                0x00000104                __vector_20
+                0x00000108                . = ALIGN (0x2)
  *(.text.*)
  .text._ZN14HardwareSerial9availableEv
-                0x00000100       0x18 ./arduino/HardwareSerial.o
-                0x00000100                _ZN14HardwareSerial9availableEv
+                0x00000108       0x18 ./arduino/HardwareSerial.o
+                0x00000108                _ZN14HardwareSerial9availableEv
  .text._ZN14HardwareSerial4peekEv
-                0x00000118       0x1c ./arduino/HardwareSerial.o
-                0x00000118                _ZN14HardwareSerial4peekEv
+                0x00000120       0x1c ./arduino/HardwareSerial.o
+                0x00000120                _ZN14HardwareSerial4peekEv
  .text._ZN14HardwareSerial4readEv
-                0x00000134       0x28 ./arduino/HardwareSerial.o
-                0x00000134                _ZN14HardwareSerial4readEv
+                0x0000013c       0x28 ./arduino/HardwareSerial.o
+                0x0000013c                _ZN14HardwareSerial4readEv
  .text._Z14serialEventRunv
-                0x0000015c       0x1a ./arduino/HardwareSerial.o
-                0x0000015c                _Z14serialEventRunv
+                0x00000164       0x1c ./arduino/HardwareSerial.o
+                0x00000164                _Z14serialEventRunv
  .text._ZN14HardwareSerial17_tx_udr_empty_irqEv
-                0x00000176       0x42 ./arduino/HardwareSerial.o
-                0x00000176                _ZN14HardwareSerial17_tx_udr_empty_irqEv
+                0x00000180       0x42 ./arduino/HardwareSerial.o
+                0x00000180                _ZN14HardwareSerial17_tx_udr_empty_irqEv
  .text._ZN14HardwareSerial5flushEv
-                0x000001b8       0x42 ./arduino/HardwareSerial.o
-                0x000001b8                _ZN14HardwareSerial5flushEv
+                0x000001c2       0x44 ./arduino/HardwareSerial.o
+                0x000001c2                _ZN14HardwareSerial5flushEv
  .text._ZN14HardwareSerial5writeEh
-                0x000001fa       0x8c ./arduino/HardwareSerial.o
-                0x000001fa                _ZN14HardwareSerial5writeEh
+                0x00000206       0x8e ./arduino/HardwareSerial.o
+                0x00000206                _ZN14HardwareSerial5writeEh
  .text._ZN14HardwareSerial5beginEmh
-                0x00000286       0xc6 ./arduino/HardwareSerial.o
-                0x00000286                _ZN14HardwareSerial5beginEmh
+                0x00000294       0xca ./arduino/HardwareSerial.o
+                0x00000294                _ZN14HardwareSerial5beginEmh
  .text.__vector_18
-                0x0000034c       0x64 ./arduino/HardwareSerial0.o
-                0x0000034c                __vector_18
+                0x0000035e       0x64 ./arduino/HardwareSerial0.o
+                0x0000035e                __vector_18
  .text.__vector_19
-                0x000003b0       0x4a ./arduino/HardwareSerial0.o
-                0x000003b0                __vector_19
+                0x000003c2       0x4c ./arduino/HardwareSerial0.o
+                0x000003c2                __vector_19
  .text._Z17Serial0_availablev
-                0x000003fa       0x12 ./arduino/HardwareSerial0.o
-                0x000003fa                _Z17Serial0_availablev
+                0x0000040e       0x14 ./arduino/HardwareSerial0.o
+                0x0000040e                _Z17Serial0_availablev
  .text.startup._GLOBAL__sub_I___vector_18
-                0x0000040c       0x5a ./arduino/HardwareSerial0.o
+                0x00000422       0x5a ./arduino/HardwareSerial0.o
  .text._ZNK9IPAddress7printToER5Print
-                0x00000466       0x7e ./arduino/IPAddress.o
-                0x00000466                _ZNK9IPAddress7printToER5Print
+                0x0000047c       0x84 ./arduino/IPAddress.o
+                0x0000047c                _ZNK9IPAddress7printToER5Print
  .text.startup._GLOBAL__sub_I__ZN9IPAddressC2Ev
-                0x000004e4       0x16 ./arduino/IPAddress.o
+                0x00000500       0x16 ./arduino/IPAddress.o
  .text._ZN5Print5writeEPKhj
-                0x000004fa       0x56 ./arduino/Print.o
-                0x000004fa                _ZN5Print5writeEPKhj
+                0x00000516       0x56 ./arduino/Print.o
+                0x00000516                _ZN5Print5writeEPKhj
  .text._ZN5Print5writeEPKc
-                0x00000550       0x2a ./arduino/Print.o
-                0x00000550                _ZN5Print5writeEPKc
+                0x0000056c       0x2a ./arduino/Print.o
+                0x0000056c                _ZN5Print5writeEPKc
  .text._ZN5Print5printEPKc
-                0x0000057a        0x2 ./arduino/Print.o
-                0x0000057a                _ZN5Print5printEPKc
+                0x00000596        0x4 ./arduino/Print.o
+                0x00000596                _ZN5Print5printEPKc
  .text._ZN5Print5printEc
-                0x0000057c        0xe ./arduino/Print.o
-                0x0000057c                _ZN5Print5printEc
+                0x0000059a        0xe ./arduino/Print.o
+                0x0000059a                _ZN5Print5printEc
  .text._ZN5Print7printlnEv
-                0x0000058a        0x6 ./arduino/Print.o
-                0x0000058a                _ZN5Print7printlnEv
+                0x000005a8        0x8 ./arduino/Print.o
+                0x000005a8                _ZN5Print7printlnEv
  .text._ZN5Print11printNumberEmh
-                0x00000590       0xa4 ./arduino/Print.o
-                0x00000590                _ZN5Print11printNumberEmh
+                0x000005b0       0xa8 ./arduino/Print.o
+                0x000005b0                _ZN5Print11printNumberEmh
  .text._ZN5Print5printEli
-                0x00000634       0x8e ./arduino/Print.o
-                0x00000634                _ZN5Print5printEli
+                0x00000658       0x94 ./arduino/Print.o
+                0x00000658                _ZN5Print5printEli
  .text._ZN5Print5printEii
-                0x000006c2        0xc ./arduino/Print.o
-                0x000006c2                _ZN5Print5printEii
+                0x000006ec        0xe ./arduino/Print.o
+                0x000006ec                _ZN5Print5printEii
  .text._ZN5Print5printEmi
-                0x000006ce       0x18 ./arduino/Print.o
-                0x000006ce                _ZN5Print5printEmi
+                0x000006fa       0x1a ./arduino/Print.o
+                0x000006fa                _ZN5Print5printEmi
  .text._ZN5Print5printEhi
-                0x000006e6        0xc ./arduino/Print.o
-                0x000006e6                _ZN5Print5printEhi
+                0x00000714        0xe ./arduino/Print.o
+                0x00000714                _ZN5Print5printEhi
  .text._Z12disableTimerh
-                0x000006f2       0x40 ./arduino/Tone.o
-                0x000006f2                _Z12disableTimerh
+                0x00000722       0x40 ./arduino/Tone.o
+                0x00000722                _Z12disableTimerh
  .text._Z6noToneh
-                0x00000732       0x28 ./arduino/Tone.o
-                0x00000732                _Z6noToneh
+                0x00000762       0x2c ./arduino/Tone.o
+                0x00000762                _Z6noToneh
  .text.__vector_7
-                0x0000075a       0xb6 ./arduino/Tone.o
-                0x0000075a                __vector_7
- .text.nothing  0x00000810        0x2 ./arduino/WInterrupts.o
+                0x0000078e       0xb8 ./arduino/Tone.o
+                0x0000078e                __vector_7
+ .text.nothing  0x00000846        0x2 ./arduino/WInterrupts.o
  .text.__vector_1
-                0x00000812       0x4e ./arduino/WInterrupts.o
-                0x00000812                __vector_1
+                0x00000848       0x4e ./arduino/WInterrupts.o
+                0x00000848                __vector_1
  .text.__vector_2
-                0x00000860       0x4e ./arduino/WInterrupts.o
-                0x00000860                __vector_2
- .text.__empty  0x000008ae        0x2 ./arduino/hooks.o
-                0x000008ae                yield
+                0x00000896       0x4e ./arduino/WInterrupts.o
+                0x00000896                __vector_2
+ .text.__empty  0x000008e4        0x2 ./arduino/hooks.o
+                0x000008e4                yield
  .text.initVariant
-                0x000008b0        0x2 ./arduino/main.o
-                0x000008b0                initVariant
+                0x000008e6        0x2 ./arduino/main.o
+                0x000008e6                initVariant
  .text.startup.main
-                0x000008b2       0x14 ./arduino/main.o
-                0x000008b2                main
+                0x000008e8       0x1e ./arduino/main.o
+                0x000008e8                main
  .text.__vector_16
-                0x000008c6       0x94 ./arduino/wiring.o
-                0x000008c6                __vector_16
- .text.micros   0x0000095a       0x4a ./arduino/wiring.o
-                0x0000095a                micros
- .text.delay    0x000009a4       0x72 ./arduino/wiring.o
-                0x000009a4                delay
- .text.init     0x00000a16       0x76 ./arduino/wiring.o
-                0x00000a16                init
+                0x00000906       0x94 ./arduino/wiring.o
+                0x00000906                __vector_16
+ .text.micros   0x0000099a       0x4a ./arduino/wiring.o
+                0x0000099a                micros
+ .text.delay    0x000009e4       0x78 ./arduino/wiring.o
+                0x000009e4                delay
+ .text.init     0x00000a5c       0x76 ./arduino/wiring.o
+                0x00000a5c                init
  .text.analogRead
-                0x00000a8c       0x3a ./arduino/wiring_analog.o
-                0x00000a8c                analogRead
+                0x00000ad2       0x3a ./arduino/wiring_analog.o
+                0x00000ad2                analogRead
  .text.turnOffPWM
-                0x00000ac6       0x52 ./arduino/wiring_digital.o
+                0x00000b0c       0x52 ./arduino/wiring_digital.o
  .text.digitalWrite
-                0x00000b18       0x5e ./arduino/wiring_digital.o
-                0x00000b18                digitalWrite
- .text.setup    0x00000b76       0x10 ./touch_sensor.o
-                0x00000b76                setup
- .text.loop     0x00000b86       0x4e ./touch_sensor.o
-                0x00000b86                loop
+                0x00000b5e       0x60 ./arduino/wiring_digital.o
+                0x00000b5e                digitalWrite
+ .text.setup    0x00000bbe       0x12 ./touch_sensor.o
+                0x00000bbe                setup
+ .text.loop     0x00000bd0       0x5c ./touch_sensor.o
+                0x00000bd0                loop
  .text.libgcc.div
-                0x00000bd4       0x44 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_udivmodsi4.o)
-                0x00000bd4                __udivmodsi4
- .text.libgcc   0x00000c18        0xc c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_tablejump2.o)
-                0x00000c18                __tablejump2__
-                0x00000c24                . = ALIGN (0x2)
+                0x00000c2c       0x44 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_udivmodsi4.o)
+                0x00000c2c                __udivmodsi4
+ .text.libgcc   0x00000c70        0xc c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_tablejump2.o)
+                0x00000c70                __tablejump2__
+                0x00000c7c                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000c24        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_exit.o)
-                0x00000c24                _exit
-                0x00000c24                exit
+ .fini9         0x00000c7c        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_exit.o)
+                0x00000c7c                _exit
+                0x00000c7c                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -1344,11 +1401,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000c24        0x4 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000c7c        0x4 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000c28                _etext = .
+                0x00000c80                _etext = .
 
-.data           0x00800100       0x38 load address 0x00000c28
+.data           0x00800100       0x38 load address 0x00000c80
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5/crtatmega328p.o
@@ -1376,6 +1433,7 @@ END GROUP
  .data          0x00800100        0x0 ./arduino/wiring_digital.o
  .data          0x00800100        0x0 ./arduino/wiring_pulse.o
  .data          0x00800100        0x0 ./arduino/wiring_shift.o
+ .data          0x00800100        0x0 ./remapTouch.o
  .data          0x00800100        0x0 ./touch_sensor.o
  .data          0x00800100        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_mulsi3.o)
  .data          0x00800100        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_udivmodsi4.o)
@@ -1393,6 +1451,7 @@ END GROUP
  .data          0x00800100        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(cmpsf2.o)
  .data          0x00800100        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(divsf3.o)
  .data          0x00800100        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+ .data          0x00800100        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
  .data          0x00800100        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
  .data          0x00800100        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(floatsisf.o)
  .data          0x00800100        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_cmp.o)
@@ -1441,12 +1500,19 @@ END GROUP
  .data          0x0080010a        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(ultoa_ncheck.o)
  .data          0x0080010a        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(utoa.o)
  .data          0x0080010a        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o)
+ .data          0x0080010a        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(printf.o)
+ .data          0x0080010a        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
  .data          0x0080010a        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(dtoa_prf.o)
  .data          0x0080010a        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strtod.o)
  .data          0x0080010a        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(ftoa_engine.o)
  .data          0x0080010a        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(cty_isfalse.o)
  .data          0x0080010a        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strncasecmp_P.o)
+ .data          0x0080010a        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+ .data          0x0080010a        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strnlen.o)
  .data          0x0080010a        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strrev.o)
+ .data          0x0080010a        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(fputc.o)
+ .data          0x0080010a        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(iob.o)
+ .data          0x0080010a        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
  .data          0x0080010a        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(errno.o)
  .data          0x0080010a        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_mulshisi3.o)
  .data          0x0080010a        0x0 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_prologue.o)
@@ -1503,8 +1569,8 @@ END GROUP
                 0x008001e7                timer0_overflow_count
  *(COMMON)
                 0x008001eb                PROVIDE (__bss_end, .)
-                0x00000c28                __data_load_start = LOADADDR (.data)
-                0x00000c60                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000c80                __data_load_start = LOADADDR (.data)
+                0x00000cb8                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x008001eb        0x0
                 0x008001eb                PROVIDE (__noinit_start, .)
@@ -1574,13 +1640,18 @@ END GROUP
  .comment       0x00000011       0x12 ./arduino/wiring_digital.o
  .comment       0x00000011       0x12 ./arduino/wiring_pulse.o
  .comment       0x00000011       0x12 ./arduino/wiring_shift.o
+ .comment       0x00000011       0x12 ./remapTouch.o
  .comment       0x00000011       0x12 ./touch_sensor.o
  .comment       0x00000011       0x12 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(dtostrf.o)
  .comment       0x00000011       0x12 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(malloc.o)
  .comment       0x00000011       0x12 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(random.o)
  .comment       0x00000011       0x12 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(realloc.o)
+ .comment       0x00000011       0x12 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(printf.o)
+ .comment       0x00000011       0x12 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
  .comment       0x00000011       0x12 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(dtoa_prf.o)
  .comment       0x00000011       0x12 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strtod.o)
+ .comment       0x00000011       0x12 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(fputc.o)
+ .comment       0x00000011       0x12 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(iob.o)
  .comment       0x00000011       0x12 c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(errno.o)
 
 .note.gnu.avr.deviceinfo
@@ -1852,6 +1923,7 @@ _ZplRK15StringSumHelperl                          ./arduino/WString.o
 _ZplRK15StringSumHelperm                          ./arduino/WString.o
 __FUSE_REGION_LENGTH__                            c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5/crtatmega328p.o
 __addsf3                                          c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(addsf3.o)
+                                                  ./remapTouch.o
                                                   ./arduino/Print.o
 __addsf3x                                         c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(addsf3x.o)
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(addsf3.o)
@@ -1876,12 +1948,14 @@ __divmodsi4                                       c:/program files (x86)/arduino
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(random.o)
                                                   ./arduino/WMath.o
 __divsf3                                          c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(divsf3.o)
+                                                  ./remapTouch.o
                                                   ./arduino/Print.o
 __divsf3_pse                                      c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(divsf3x.o)
 __divsf3x                                         c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(divsf3x.o)
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(divsf3.o)
 __do_clear_bss                                    c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_clear_bss.o)
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(errno.o)
+                                                  c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(iob.o)
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(malloc.o)
                                                   ./arduino/wiring.o
                                                   ./arduino/WString.o
@@ -1892,6 +1966,7 @@ __do_copy_data                                    c:/program files (x86)/arduino
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(random.o)
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(malloc.o)
                                                   ./touch_sensor.o
+                                                  ./remapTouch.o
                                                   ./arduino/wiring_analog.o
                                                   ./arduino/WString.o
                                                   ./arduino/WInterrupts.o
@@ -1905,12 +1980,18 @@ __do_global_ctors                                 c:/program files (x86)/arduino
                                                   ./arduino/HardwareSerial0.o
 __epilogue_restores__                             c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_epilogue.o)
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strtod.o)
+                                                  c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+                                                  c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(printf.o)
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(realloc.o)
 __eqsf2                                           c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(cmpsf2.o)
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strtod.o)
+__fixsfsi                                         c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
+                                                  ./remapTouch.o
 __fixunssfsi                                      c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
+                                                  c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
                                                   ./arduino/Print.o
 __floatsisf                                       c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(floatsisf.o)
+                                                  ./remapTouch.o
                                                   ./arduino/Stream.o
 __floatunsisf                                     c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(floatsisf.o)
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strtod.o)
@@ -1949,6 +2030,7 @@ __fp_splitA                                       c:/program files (x86)/arduino
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
 __fp_szero                                        c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_zero.o)
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+                                                  c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(divsf3x.o)
 __fp_zero                                         c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fp_zero.o)
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
@@ -1962,6 +2044,8 @@ __heap_end                                        c:/program files (x86)/arduino
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(malloc.o)
 __heap_start                                      c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(malloc.o)
 __init                                            c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5/crtatmega328p.o
+__iob                                             c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(iob.o)
+                                                  c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(printf.o)
 __itoa                                            c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(itoa.o)
                                                   ./arduino/WString.o
 __itoa_ncheck                                     c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(itoa_ncheck.o)
@@ -1983,6 +2067,7 @@ __mulohisi3                                       c:/program files (x86)/arduino
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(random.o)
 __mulsf3                                          c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(mulsf3.o)
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strtod.o)
+                                                  ./remapTouch.o
                                                   ./arduino/Stream.o
                                                   ./arduino/Print.o
 __mulsf3_pse                                      c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
@@ -2006,6 +2091,8 @@ __nesf2                                           c:/program files (x86)/arduino
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strtod.o)
 __prologue_saves__                                c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_prologue.o)
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strtod.o)
+                                                  c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+                                                  c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(printf.o)
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(realloc.o)
 __stack                                           c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5/crtatmega328p.o
 __strlen_P                                        c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strlen_P.o)
@@ -2023,6 +2110,8 @@ __ultoa                                           c:/program files (x86)/arduino
                                                   ./arduino/WString.o
 __ultoa_common                                    c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(ultoa_ncheck.o)
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(ltoa_ncheck.o)
+__ultoa_invert                                    c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
+                                                  c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
 __ultoa_ncheck                                    c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(ultoa_ncheck.o)
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(ultoa.o)
 __umulhisi3                                       c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_umulhisi3.o)
@@ -2110,6 +2199,8 @@ errno                                             c:/program files (x86)/arduino
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strtod.o)
 exit                                              c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_exit.o)
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5/crtatmega328p.o
+fputc                                             c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(fputc.o)
+                                                  c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
 free                                              c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(malloc.o)
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(realloc.o)
                                                   ./arduino/new.o
@@ -2126,7 +2217,8 @@ loop                                              ./touch_sensor.o
                                                   ./arduino/main.o
 ltoa                                              c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(ltoa.o)
                                                   ./arduino/WString.o
-main                                              ./arduino/main.o
+main                                              ./remapTouch.o
+                                                  ./arduino/main.o
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5/crtatmega328p.o
 malloc                                            c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(malloc.o)
                                                   c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(realloc.o)
@@ -2151,6 +2243,8 @@ port_to_input_PGM                                 ./arduino/wiring_digital.o
 port_to_mode_PGM                                  ./arduino/wiring_digital.o
 port_to_output_PGM                                ./arduino/wiring_digital.o
                                                   ./arduino/Tone.o
+printf                                            c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(printf.o)
+                                                  ./remapTouch.o
 pulseIn                                           ./arduino/wiring_pulse.o
 pulseInLong                                       ./arduino/wiring_pulse.o
 random                                            c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(random.o)
@@ -2158,6 +2252,7 @@ random                                            c:/program files (x86)/arduino
 random_r                                          c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(random.o)
 realloc                                           c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(realloc.o)
                                                   ./arduino/WString.o
+remapTouch                                        ./remapTouch.o
 setup                                             ./touch_sensor.o
                                                   ./arduino/main.o
 shiftIn                                           ./arduino/wiring_shift.o
@@ -2178,6 +2273,10 @@ strncmp                                           c:/program files (x86)/arduino
                                                   ./arduino/WString.o
 strncpy                                           c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strncpy.o)
                                                   ./arduino/WString.o
+strnlen                                           c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strnlen.o)
+                                                  c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+strnlen_P                                         c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+                                                  c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
 strrchr                                           c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strrchr.o)
                                                   ./arduino/WString.o
 strrev                                            c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(strrev.o)
@@ -2206,5 +2305,7 @@ ultoa                                             c:/program files (x86)/arduino
                                                   ./arduino/WString.o
 utoa                                              c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(utoa.o)
                                                   ./arduino/WString.o
+vfprintf                                          c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+                                                  c:/program files (x86)/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(printf.o)
 yield                                             ./arduino/hooks.o
                                                   ./arduino/wiring.o
