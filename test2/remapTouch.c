@@ -5,9 +5,13 @@
 int main(void){
 	int value;
 	int remapped_value;
+	int i=0;
 	value = 600;
-	remapped_value = remapTouch(600);
-	printf("%d\n", remapped_value);
+//	for (i = 0; i<601; i++){
+		remapped_value = remapTouch(i);
+		printf("%d\n", remapped_value);
+//	}
+
 
 }
 

@@ -12,8 +12,8 @@
 
 int remapPotentialMeter (int x);
 int remapTouchSensor(int x);
-void potential_red_control();
-void touch_sensor_yellow_control();
+void potential_red();
+void touch_sensor_yellow();
 
 
 void setup() {
@@ -24,23 +24,20 @@ void setup() {
 }
 
 void loop() {
-	potential_red_control();
-	touch_sensor_yellow_control();
+	potential_red();
+	touch_sensor_yellow();
 }
 
-void potential_red_control(){
+void potential_red(){
 	int val;
 	val = analogRead(PIN_POTENTIALMETER_INPUT);
 	analogWrite(PIN_LED_RED, remapPotentialMeter(val));
 }
 
-void touch_sensor_yellow_control(){
+void touch_sensor_yellow(){
 	int val;
 	val = analogRead(PIN_TOUCH_SENSOR_INPUT);
-	digitalWrite(PIN_LED_YELLOW, HIGH); // Set digital I/O pin to a 1
-	delay(	remapTouchSensor(val)); // Delay
-	digitalWrite(PIN_LED_YELLOW, LOW); // Set digital I/O pin to a 0
-	delay(	remapTouchSensor(val));
+	analogWrite(PIN_LED_YELLOW, remapTouchSensor(val));
 }
 
 int remapPotentialMeter(int val){
@@ -50,8 +47,8 @@ int remapPotentialMeter(int val){
 }
 
 int remapTouchSensor(int val){
-	int remappedValue;
-	remappedValue = (double)val/600.0 * 375.0 +125;
+	val, remappedValue;
+	remappedValue = (double)val/600.0 * 375 +125;
 	return remappedValue;
 }
 

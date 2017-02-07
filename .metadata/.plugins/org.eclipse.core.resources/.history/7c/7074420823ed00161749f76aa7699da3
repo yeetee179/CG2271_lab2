@@ -41,6 +41,7 @@ void touch_sensor_yellow_control(){
 	delay(	remapTouchSensor(val)); // Delay
 	digitalWrite(PIN_LED_YELLOW, LOW); // Set digital I/O pin to a 0
 	delay(	remapTouchSensor(val));
+
 }
 
 int remapPotentialMeter(int val){
