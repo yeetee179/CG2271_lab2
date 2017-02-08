@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino" key="org.eclipse.cdt.utils.ui.controls.FileListControl"/>
+	<item value="C:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\standard" key="org.eclipse.cdt.utils.ui.controls.FileListControl"/>
 	<item value="Default C++ source template" key="LastUsedSourceTemplate"/>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
 	</section>
