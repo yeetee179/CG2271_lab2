@@ -20,12 +20,10 @@ void isr()
 		flag = !flag;
 	}
 	previousInterruptTime = currentInterruptTime;
-
 }
 void setup()
 {
-//	attachInterrupt(0, isr, RISING);
-	attachInterrupt(digitalPinToInterrupt(2), isr, FALLING);
+	attachInterrupt(digitalPinToInterrupt(3), isr, FALLING);
 	pinMode(6, OUTPUT);
 }
 void loop()
