@@ -16,7 +16,7 @@ void isr()
 //	unsigned long currentInterruptTime;
 //	static unsigned long previousInterruptTime = 0;
 	currentInterruptTime = millis();
-	if((currentInterruptTime - previousInterruptTime) > 200){
+	if((previousInterruptTime - currentInterruptTime) > 500){
 		flag = !flag;
 	}
 	previousInterruptTime = currentInterruptTime;
