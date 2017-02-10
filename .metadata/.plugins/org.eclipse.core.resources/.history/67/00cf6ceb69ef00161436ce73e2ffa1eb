@@ -23,7 +23,7 @@ void isr(){
 
 void setup()
 {
-	attachInterrupt(0, isr, RISING);
+	attachInterrupt(0, isr, FALLING);
 	pinMode(6, OUTPUT);
 }
 void loop()
