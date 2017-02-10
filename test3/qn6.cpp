@@ -10,11 +10,8 @@
 #define PIN_POTENTIALMETER_INPUT 0
 #define PIN_TOUCH_SENSOR_INPUT 1
 
-int remapPotentialMeter (int x);
-int remapTouchSensor(int x);
-void potential_red_control();
-void touch_sensor_yellow_control();
-
+int remapPotentialMeter(int val);
+int remapTouchSensor(int val);
 
 void setup() {
 	pinMode(PIN_LED_RED, OUTPUT);
@@ -23,17 +20,14 @@ void setup() {
 	pinMode(PIN_TOUCH_SENSOR_INPUT, INPUT);
 }
 
-void loop() {
-	potential_red_control();
-	touch_sensor_yellow_control();
-}
-
+//controls the brightness of the red LED
 void potential_red_control(){
 	int val;
 	val = analogRead(PIN_POTENTIALMETER_INPUT);
 	analogWrite(PIN_LED_RED, remapPotentialMeter(val));
 }
 
+//controls the blinking speed of the yellow LED
 void touch_sensor_yellow_control(){
 	int val;
 	val = analogRead(PIN_TOUCH_SENSOR_INPUT);
@@ -43,18 +37,23 @@ void touch_sensor_yellow_control(){
 	delay(remapTouchSensor(val));
 }
 
+//remaps the potential meter value of 0 - 1023 to 0 - 255
 int remapPotentialMeter(int val){
 	int revised_val;
 	revised_val = val/4;
 	return revised_val;
 }
 
+//remaps the touch sensor value of 0 - 1005 to 125 - 500
 int remapTouchSensor(int val){
 	int remappedValue;
-	remappedValue = (double)val/600.0 * 375.0 +125;
+	remappedValue = (double)val/1005.0 * 375.0 +125;
 	return remappedValue;
 }
 
-
+void loop() {
+	potential_red_control();
+	touch_sensor_yellow_control();
+}
 
 
