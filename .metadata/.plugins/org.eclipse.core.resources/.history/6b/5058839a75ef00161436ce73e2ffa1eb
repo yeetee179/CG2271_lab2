@@ -57,7 +57,7 @@ int remapPotentialMeter(int val){
 	return revised_val;
 }
 
-//remaps the touch sensor value of 0 - 1005 to 125 - 500
+//remaps the touch sensor value of 0 - 1023 to 125 - 500
 int remapTouchSensor(int val){
 	int remappedValue;
 	remappedValue = (double)val/1005.0 * 375.0 +125;
