@@ -53,8 +53,8 @@ void int1ISR(){
 }
 
 void setup(){
-	attachInterrupt(digitalPinToInterrupt(3), int0ISR, FALLING); //deals with interrupt of pin 2
-	attachInterrupt(digitalPinToInterrupt(2), int1ISR, FALLING); // deals with interrupt of pin 3
+	attachInterrupt(digitalPinToInterrupt(2), int0ISR, RISING); //deals with interrupt of pin 2
+	attachInterrupt(digitalPinToInterrupt(3), int1ISR, RISING); // deals with interrupt of pin 3
 	pinMode(yellow_led_pin, OUTPUT);
 	pinMode(red_led_pin, OUTPUT);
 	pinMode(yellow_led_button, INPUT);
