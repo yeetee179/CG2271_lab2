@@ -51,7 +51,6 @@ void int1ISR(){
 	current_interrupt_time = millis();
 	if((current_interrupt_time - previous_Interrupt_time) > 200){
 		enq(queue, (void *)int1task, 0);
-		queueLength++;
 	}
 	previous_Interrupt_time = current_interrupt_time;
 
@@ -68,8 +67,6 @@ void setup(){
 
 // Dequeues and calls functions if the queue is not empty
 void loop(){
-	if(queueLength >0 ){
-		funcptr = c
-	}
+
 }
 

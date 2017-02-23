@@ -69,7 +69,7 @@ void setup(){
 // Dequeues and calls functions if the queue is not empty
 void loop(){
 	if(queueLength >0 ){
-		funcptr = c
+		funcptr =
 	}
 }
 
