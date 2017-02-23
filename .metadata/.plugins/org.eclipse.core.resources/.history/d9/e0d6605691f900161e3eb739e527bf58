@@ -13,7 +13,7 @@ TPrioQueue *queue;
 
 // Declares a new type called "funcptr"
 
- void (*funcptr)();
+typedef void (*funcptr)(void);
 
 // Flashes LED at pin 7: 5 times a 4 Hz
 void int0task(){
@@ -67,9 +67,9 @@ void setup(){
 void loop(){
     if(qlen(queue)>0)
 	      {
-	   	   funcptr = (void *) (deq(queue));
+	   	   funcptr = (void (*)()) (deq(queue));
 	   	   funcptr();
 	      }
 	}
-
+}
 

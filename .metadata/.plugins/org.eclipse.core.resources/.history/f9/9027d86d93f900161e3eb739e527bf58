@@ -67,7 +67,7 @@ void setup(){
 void loop(){
     if(qlen(queue)>0)
 	      {
-	   	   funcptr = (void *) (deq(queue));
+	   	   funcptr = (deq(queue));
 	   	   funcptr();
 	      }
 	}
