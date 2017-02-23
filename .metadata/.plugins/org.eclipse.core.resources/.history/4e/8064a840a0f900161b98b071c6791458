@@ -57,6 +57,8 @@ void setup(){
 	attachInterrupt(digitalPinToInterrupt(2), int1ISR, FALLING); // deals with interrupt of pin 3
 	pinMode(yellow_led_pin, OUTPUT);
 	pinMode(red_led_pin, OUTPUT);
+	pinMode(yellow_led_button, INPUT);
+	pinMode(red_led_button, INPUT);
 
 	queue = makeQueue();
 }

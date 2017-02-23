@@ -37,7 +37,7 @@ void int1task(){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void int0ISR(){
 	current_interrupt_time = millis();
-	if((current_interrupt_time - previous_Interrupt_time) > 100){
+	if((current_interrupt_time - previous_Interrupt_time) > 200){
 		enq(queue, (void *)int0task, 1);
 	}
 	previous_Interrupt_time = current_interrupt_time;
@@ -45,7 +45,7 @@ void int0ISR(){
 
 void int1ISR(){
 	current_interrupt_time = millis();
-	if((current_interrupt_time - previous_Interrupt_time) > 100){
+	if((current_interrupt_time - previous_Interrupt_time) > 200){
 		enq(queue, (void *)int1task, 0);
 	}
 	previous_Interrupt_time = current_interrupt_time;
@@ -57,6 +57,8 @@ void setup(){
 	attachInterrupt(digitalPinToInterrupt(2), int1ISR, FALLING); // deals with interrupt of pin 3
 	pinMode(yellow_led_pin, OUTPUT);
 	pinMode(red_led_pin, OUTPUT);
+	pinMode(yellow_led_button, INPUT);
+	pinMode(red_led_button, INPUT);
 
 	queue = makeQueue();
 }
@@ -64,7 +66,8 @@ void setup(){
 // Dequeues and calls functions if the queue is not empty
 void loop(){
     if(qlen(queue)>0){
-    	void(*funcptr)(void) = (void (*)(void)) deq(queue);
+//    	void(*funcptr)(void) = (void (*)(void)) deq(queue);
+    	*funcptr = (*)deq(queue);
     	funcptr();
 	    }
 	}

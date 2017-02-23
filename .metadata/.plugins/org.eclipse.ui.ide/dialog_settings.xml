@@ -4,6 +4,10 @@
 		<item value="C:\Users\user-pc\Desktop\CG2271\lab2" key="OUTSIDE_LOCATION"/>
 	</section>
 	<section name="NewWizardAction">
+		<item value="org.eclipse.cdt.ui.wizards.NewCWizard1" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.cdt.ui.newCWizards"/>
+		</list>
 	</section>
 	<section name="BasicNewProjectResourceWizard">
 	</section>
