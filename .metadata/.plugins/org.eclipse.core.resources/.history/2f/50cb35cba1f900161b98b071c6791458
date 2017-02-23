@@ -64,9 +64,13 @@ void setup(){
 // Dequeues and calls functions if the queue is not empty
 void loop(){
     if(qlen(queue)>0){
-    	void(*funcptr)(void) = (void (*)(void)) deq(queue);
-    	funcptr();
-    }
-}
+//    	void(*funcptr)(void) = (void (*)(void)) deq(queue);
+//    	funcptr();
+    	funcptr func = (funcptr) deq(queue);
+    			if (func != NULL)
+    				(*func)();
+
+	    }
+	}
 
 
