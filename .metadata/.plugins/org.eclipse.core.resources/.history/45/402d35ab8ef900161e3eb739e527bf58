@@ -9,6 +9,9 @@
 unsigned long current_interrupt_time;
 static unsigned long previous_Interrupt_time = 0;
 
+int queueLength = 0;
+
+
 TPrioQueue *queue;
 
 // Declares a new type called "funcptr"
@@ -39,6 +42,7 @@ void int0ISR(){
 	current_interrupt_time = millis();
 	if((current_interrupt_time - previous_Interrupt_time) > 200){
 		enq(queue, (void *)int0task, 1);
+		queueLength++;
 	}
 	previous_Interrupt_time = current_interrupt_time;
 }
@@ -47,6 +51,7 @@ void int1ISR(){
 	current_interrupt_time = millis();
 	if((current_interrupt_time - previous_Interrupt_time) > 200){
 		enq(queue, (void *)int1task, 0);
+		queueLength++;
 	}
 	previous_Interrupt_time = current_interrupt_time;
 
@@ -63,8 +68,8 @@ void setup(){
 
 // Dequeues and calls functions if the queue is not empty
 void loop(){
-	if(qlen(queue) >0 ){
-		funcptr = deq(queue);
+	if(queueLength >0 ){
+		funcptr = c
 	}
 }
 
