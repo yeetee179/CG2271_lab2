@@ -36,16 +36,16 @@ void int1task(){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void int0ISR(){
 	current_interrupt_time = millis();
-	if((current_interrupt_time - previous_Interrupt_time) > 200){
-		enq(queue, (void *)int0task, 0);
+	if((current_interrupt_time - previous_Interrupt_time) > 150){
+		enq(queue, (void *)int0task, 1);
 	}
 	previous_Interrupt_time = current_interrupt_time;
 }
 
 void int1ISR(){
 	current_interrupt_time = millis();
-	if((current_interrupt_time - previous_Interrupt_time) > 200){
-		enq(queue, (void *)int1task, 1);
+	if((current_interrupt_time - previous_Interrupt_time) > 150){
+		enq(queue, (void *)int1task, 0);
 	}
 	previous_Interrupt_time = current_interrupt_time;
 
