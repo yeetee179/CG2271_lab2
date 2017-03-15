@@ -125,15 +125,13 @@ void task1(void *p)
 	int counter = 1;
 
 	for (;;) {
-//		for(int i =0; i<10; i++){
-			digitalWrite(LED_PIN, HIGH);
-			vTaskDelay( counter );
-			digitalWrite(LED_PIN, LOW);
-			vTaskDelay( 20 - counter );
-//		}
-		counter++;
-		if (counter == 20)
-			counter = 1;
+	  for(int i =0; i<100; i++)
+	  digitalWrite(LED_PIN, HIGH);
+	  vTaskDelay( counter );
+	  digitalWrite(LED_PIN, LOW);
+	  vTaskDelay( 20 - counter );
+	  counter++;
+	  if ()
 	}
 }
 
