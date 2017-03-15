@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?scdStore version="2"?><scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
-<instance id="de.innot.avreclipse.configuration.app.release.2012852310;de.innot.avreclipse.configuration.app.release.2012852310.;de.innot.avreclipse.tool.compiler.winavr.app.release.801187037;de.innot.avreclipse.compiler.winavr.input.856053117">
+<instance id="de.innot.avreclipse.configuration.app.release.2060585870;de.innot.avreclipse.configuration.app.release.2060585870.;de.innot.avreclipse.tool.compiler.winavr.app.release.786926502;de.innot.avreclipse.compiler.winavr.input.950186526">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
 <includePath path="c:\program files (x86)\arduino\hardware\tools\avr\bin\../lib/gcc/avr/4.9.2/include"/>
 <includePath path="c:\program files (x86)\arduino\hardware\tools\avr\bin\../lib/gcc/avr/4.9.2/include-fixed"/>
@@ -437,11 +437,13 @@
 <definedSymbol symbol="__ELF__=1"/>
 <definedSymbol symbol="__AVR_ATmega16__=1"/>
 <definedSymbol symbol="__AVR_DEVICE_NAME__=atmega16"/>
+<definedSymbol symbol="__AVR_DEVICE_NAME__=atmega328p"/>
 <definedSymbol symbol="F_CPU=1000000UL"/>
 <definedSymbol symbol="F_CPU=16000000UL"/>
+<definedSymbol symbol="__AVR_ATmega328P__=1"/>
 </collector>
 </instance>
-<instance id="de.innot.avreclipse.configuration.app.release.2012852310;de.innot.avreclipse.configuration.app.release.2012852310.;de.innot.avreclipse.tool.cppcompiler.app.release.1891368066;de.innot.avreclipse.cppcompiler.input.1703759668">
+<instance id="de.innot.avreclipse.configuration.app.release.2060585870;de.innot.avreclipse.configuration.app.release.2060585870.;de.innot.avreclipse.tool.cppcompiler.app.release.964213596;de.innot.avreclipse.cppcompiler.input.2131668805">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
 <includePath path="c:\program files (x86)\arduino\hardware\tools\avr\bin\../lib/gcc/avr/4.9.2/include"/>
 <includePath path="c:\program files (x86)\arduino\hardware\tools\avr\bin\../lib/gcc/avr/4.9.2/include-fixed"/>
@@ -881,8 +883,10 @@
 <definedSymbol symbol="__ELF__=1"/>
 <definedSymbol symbol="__AVR_ATmega16__=1"/>
 <definedSymbol symbol="__AVR_DEVICE_NAME__=atmega16"/>
+<definedSymbol symbol="__AVR_DEVICE_NAME__=atmega328p"/>
 <definedSymbol symbol="F_CPU=1000000UL"/>
 <definedSymbol symbol="F_CPU=16000000UL"/>
+<definedSymbol symbol="__AVR_ATmega328P__=1"/>
 </collector>
 </instance>
 </scannerInfo>

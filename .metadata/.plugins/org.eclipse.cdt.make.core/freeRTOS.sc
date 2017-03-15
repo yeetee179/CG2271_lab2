@@ -435,9 +435,12 @@
 <definedSymbol symbol="__INT24_MIN__=(-__INT24_MAX__-1)"/>
 <definedSymbol symbol="__UINT24_MAX__=16777215UL"/>
 <definedSymbol symbol="__ELF__=1"/>
-<definedSymbol symbol="__AVR_ATmega328P__=1"/>
+<definedSymbol symbol="__AVR_ATmega16__=1"/>
+<definedSymbol symbol="__AVR_DEVICE_NAME__=atmega16"/>
 <definedSymbol symbol="__AVR_DEVICE_NAME__=atmega328p"/>
+<definedSymbol symbol="F_CPU=1000000UL"/>
 <definedSymbol symbol="F_CPU=16000000UL"/>
+<definedSymbol symbol="__AVR_ATmega328P__=1"/>
 </collector>
 </instance>
 <instance id="de.innot.avreclipse.configuration.lib.release.2007066159;de.innot.avreclipse.configuration.lib.release.2007066159.;de.innot.avreclipse.tool.cppcompiler.lib.release.1827522846;de.innot.avreclipse.cppcompiler.input.19764167">
@@ -878,9 +881,12 @@
 <definedSymbol symbol="__INT24_MIN__=(-__INT24_MAX__-1)"/>
 <definedSymbol symbol="__UINT24_MAX__=16777215UL"/>
 <definedSymbol symbol="__ELF__=1"/>
-<definedSymbol symbol="__AVR_ATmega328P__=1"/>
+<definedSymbol symbol="__AVR_ATmega16__=1"/>
+<definedSymbol symbol="__AVR_DEVICE_NAME__=atmega16"/>
 <definedSymbol symbol="__AVR_DEVICE_NAME__=atmega328p"/>
+<definedSymbol symbol="F_CPU=1000000UL"/>
 <definedSymbol symbol="F_CPU=16000000UL"/>
+<definedSymbol symbol="__AVR_ATmega328P__=1"/>
 </collector>
 </instance>
 </scannerInfo>
