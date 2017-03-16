@@ -480,33 +480,21 @@ void setup(){
 }
 
 void taskall(void *p){
-	TickType_t currentTime = 0;
-
     task1();
     task2();
     //delay
-    currentTime = xTaskGetTickCount();
-    vTaskDelayUntil( &currentTime, 1000 );
 
     task1();
     task3();
     task4();
     //delay
-    currentTime = xTaskGetTickCount();
-    vTaskDelayUntil( &currentTime, 1100 );
-
 
     task1();
     task2();
     //delay
-    currentTime = xTaskGetTickCount();
-    vTaskDelayUntil( &currentTime, 1000 );
 
     task1();
     task3();
-    //delay
-    currentTime = xTaskGetTickCount();
-    vTaskDelayUntil( &currentTime, 1800 );
 }
 
 void loop() {

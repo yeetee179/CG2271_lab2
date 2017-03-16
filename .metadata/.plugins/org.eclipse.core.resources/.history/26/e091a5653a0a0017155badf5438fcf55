@@ -485,28 +485,27 @@ void taskall(void *p){
     task1();
     task2();
     //delay
-    currentTime = xTaskGetTickCount();
-    vTaskDelayUntil( &currentTime, 1000 );
+    currentTime0 = xTaskGetTickCount();
+
 
     task1();
     task3();
     task4();
     //delay
     currentTime = xTaskGetTickCount();
-    vTaskDelayUntil( &currentTime, 1100 );
 
 
     task1();
     task2();
     //delay
     currentTime = xTaskGetTickCount();
-    vTaskDelayUntil( &currentTime, 1000 );
+
 
     task1();
     task3();
     //delay
     currentTime = xTaskGetTickCount();
-    vTaskDelayUntil( &currentTime, 1800 );
+
 }
 
 void loop() {

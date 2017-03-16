@@ -506,7 +506,7 @@ void taskall(void *p){
     task3();
     //delay
     currentTime = xTaskGetTickCount();
-    vTaskDelayUntil( &currentTime, 1800 );
+
 }
 
 void loop() {

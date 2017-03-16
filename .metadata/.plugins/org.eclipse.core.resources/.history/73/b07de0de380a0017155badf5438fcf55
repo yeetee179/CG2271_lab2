@@ -480,33 +480,7 @@ void setup(){
 }
 
 void taskall(void *p){
-	TickType_t currentTime = 0;
 
-    task1();
-    task2();
-    //delay
-    currentTime = xTaskGetTickCount();
-    vTaskDelayUntil( &currentTime, 1000 );
-
-    task1();
-    task3();
-    task4();
-    //delay
-    currentTime = xTaskGetTickCount();
-    vTaskDelayUntil( &currentTime, 1100 );
-
-
-    task1();
-    task2();
-    //delay
-    currentTime = xTaskGetTickCount();
-    vTaskDelayUntil( &currentTime, 1000 );
-
-    task1();
-    task3();
-    //delay
-    currentTime = xTaskGetTickCount();
-    vTaskDelayUntil( &currentTime, 1800 );
 }
 
 void loop() {
@@ -514,7 +488,7 @@ void loop() {
 			"TaskAll",         // Task name
 			STACK_SIZE,      // Stack size
 			NULL,            // Pointer that will be used as parameter
-			1,               // Task priority
+			,               // Task priority
 			NULL);           // Used to pass back a handle by which the created task can be referenced.
 	vTaskStartScheduler();
 }
