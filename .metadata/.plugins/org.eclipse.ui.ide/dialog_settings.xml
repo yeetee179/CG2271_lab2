@@ -2,7 +2,7 @@
 <section name="Workbench">
 	<section name="CleanDialogSettings">
 		<item value="828" key="DIALOG_WIDTH"/>
-		<item value="true" key="TOGGLE_SELECTED"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
 		<item value="446" key="DIALOG_HEIGHT"/>
 		<item value="546" key="DIALOG_X_ORIGIN"/>
 		<item value="220" key="DIALOG_Y_ORIGIN"/>
@@ -12,6 +12,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\user-pc\Google Drive\uni\year2\sem2\cg2271\lab\CG2271\lab4"/>
 			<item value="C:\Users\user-pc\Desktop\CG2271\lab1\freeRTOS"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
