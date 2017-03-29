@@ -12,6 +12,10 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\user-pc\Desktop\CG2271\lab1\lab4qn5"/>
+			<item value="C:\Users\user-pc\Desktop\CG2271\lab1\lab4test"/>
+			<item value="C:\Users\user-pc\Desktop\CG2271\lab1"/>
+			<item value="C:\Users\user-pc\Desktop\CG2271\lab1\cg2271lab3part3"/>
 			<item value="C:\Users\user-pc\Google Drive\uni\year2\sem2\cg2271\lab\CG2271\lab4"/>
 			<item value="C:\Users\user-pc\Desktop\CG2271\lab1\freeRTOS"/>
 		</list>

@@ -1,0 +1,53 @@
+#include <Arduino.h>
+#include <avr/io.h>
+#include <FreeRTOS.h>
+#include <task.h>
+#include <semphr.h>
+#include <queue.h>
+#define STACK_SIZE 200
+
+QueueHandle_t queue = xQueueCreate(2,4);
+
+void serialPrint(void *p) {
+	while (1) {
+		int taskNum;
+		xQueueReceive( queue, &taskNum, ( TickType_t ) 1 );
+
+
+			Serial.print("Task ");
+			Serial.println(taskNum);
+
+
+
+	}
+}
+void task1and2(void *p) {
+	while (1) {
+		int taskNum = (int) p;
+		if( queue != 0 )
+		{
+			/* Send an unsigned long.  Wait for 10 ticks for space to become
+	        available if necessary. */
+			if( xQueueSend( queue,
+					(  ( void * ) &taskNum,,
+					( TickType_t ) 1 ) != pdPASS )
+			{
+				/* Failed to post the message, even after 10 ticks. */
+			}
+		}
+		vTaskDelay(1);
+	}
+}
+
+void setup() {
+	Serial.begin(115200);
+}
+
+void loop() {
+	/* create two tasks one with higher priority than the other */
+	xTaskCreate(task1and2, "Task1", STACK_SIZE, (void * ) 1, 1, NULL);
+	xTaskCreate(task1and2, "Task2", STACK_SIZE, (void * ) 2, 2, NULL);
+	/* start scheduler */
+	vTaskStartScheduler();
+}
+
