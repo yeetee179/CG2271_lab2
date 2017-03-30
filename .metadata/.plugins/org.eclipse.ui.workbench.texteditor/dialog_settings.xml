@@ -2,17 +2,28 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="configUSE_COUNTING_SEMAPHORES" key="selection"/>
+		<item value="4" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="6"/>
+			<item value="5"/>
+			<item value="13"/>
+			<item value="50"/>
+			<item value="10"/>
+			<item value="4"/>
 			<item value="configUSE_COUNTING_SEMAPHORES"/>
 			<item value="#ifndef configUSE_MUTEXES"/>
-			<item value="tickCount"/>
 		</list>
 		<list key="replacehistory">
+			<item value="4"/>
+			<item value="6"/>
+			<item value="5"/>
+			<item value="13"/>
+			<item value="50"/>
+			<item value="100"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

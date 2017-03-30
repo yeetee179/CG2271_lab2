@@ -1,0 +1,81 @@
+#include <Arduino.h>
+#include <avr/io.h>
+#include <FreeRTOS.h>
+#include <task.h>
+#include <semphr.h>
+#include <queue.h>
+
+#define STACK_SIZE 200
+
+xSemaphoreHandle semaphoreBinary = xSemaphoreCreateBinary();
+xSemaphoreHandle semaphoreCounting = xSemaphoreCreateCounting( 4, 4 );
+xSemaphoreHandle semaphoreMutex = xSemaphoreCreateMutex();
+
+int buf[4];
+int in=0, out = 0;
+
+void Producer(void *p){
+	while(1){
+		if(xSemaphoreTake( semaphoreBinary, 0)){
+			if (xSemaphoreTake( semaphoreMutex, 0)){
+				if(xSemaphoreTake( semaphoreMutex, 0)){
+					buf[in] = analogRead(0);
+					in = (in + 1) % 4;
+					xSemaphoreGive( semaphoreMutex);
+				}
+				else xSemaphoreGive( semaphoreCounting);
+			}
+			else {
+				xSemaphoreGive(semaphoreBinary);
+			}
+		}
+		else{
+			vTaskDelay(1);
+		}
+	}
+}
+
+void Consumer(void *p){
+	TickType_t currentTime = xTaskGetTickCount();
+	while (1){
+		if(xSemaphoreGive(xSemaphoreGive)){
+			if (xSemaphoreTake( semaphoreMutex, 0)){
+				if(xSemaphoreTake( semaphoreMutex, 0)){
+					if ((in + 1) %  4 !=out ){
+						consumerValue = buf[out];
+						out = (out + 1) % 4;
+						Serial.println(consumerValue);
+					}
+					xSemaphoreGive(semaphoreCounting);
+					xSemaphoreGive( semaphoreMutex);
+				}
+			}
+		}
+		vTaskDelayUntil( &currentTime, 400 );
+	}
+
+}
+
+void ProducerISR(){
+	unsigned long current_interrupt_time = millis();
+	static unsigned long previous_Interrupt_time = 0;
+	if((current_interrupt_time - previous_Interrupt_time) > 200){
+		xSemaphoreGiveFromISR(semaphoreBinary, NULL);
+	}
+	previous_Interrupt_time = current_interrupt_time;
+}
+
+void setup() {
+	Serial.begin(115200);
+	attachInterrupt(digitalPinToInterrupt(3), ProducerISR, FALLING);
+	pinMode(0, INPUT);
+	pinMode(7, OUTPUT);
+	pinMode(6, OUTPUT);
+}
+
+void loop() {
+	xTaskCreate(Producer, "Producer", STACK_SIZE, NULL, 1, NULL);
+	xTaskCreate(Consumer, "Consumer", STACK_SIZE, NULL, 1, NULL);
+	vTaskStartScheduler();
+}
+
