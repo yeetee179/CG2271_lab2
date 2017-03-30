@@ -1,0 +1,68 @@
+#include <Arduino.h>
+#include <avr/io.h>
+#include <FreeRTOS.h>
+#include <task.h>
+#include <semphr.h>
+
+#define STACK_SIZE 200
+#define PIN_PTTM 0
+
+SemaphoreHandle_t semaphoreBinary;
+
+QueueHandle_t queue;
+
+void producer(void *p)
+{
+	while(1){
+		if(xSemaphoreTake(binarySemaphore, (TickType_t) 0)){
+			int PTTMValue = analogRead(PIN_PTTM);
+			xQueueSendToBack(xQueue, &PTTMValue, (TickType_t) 5000);
+		}
+		else{
+			vTaskDelay(1);
+		}
+	}
+}
+
+void consumer(void *p)
+{
+	TickType_t wakeTime = xTaskGetTickCount();
+	while(1){
+		int PTTMValue;
+		if(xQueueReceive(xQueue, &PTTMValue, (TickType_t) 0)){
+			Serial.println(PTTMValue);
+		}
+		vTaskDelayUntil(&wakeTime, 5000);
+	}
+}
+
+void producerISR()
+{
+	static unsigned long previousInterruptTime = 0;
+	unsigned long currentInterruptTime = millis();
+
+	if(currentInterruptTime - previousInterruptTime > 100){
+		xSemaphoreGiveFromISR(binarySemaphore, NULL);
+		previousInterruptTime = currentInterruptTime;
+	}
+}
+
+void setup() {
+	Serial.begin(115200);
+
+	attachInterrupt(1, producerISR, RISING);
+
+	binarySemaphore = xSemaphoreCreateBinary();
+
+	xQueue = xQueueCreate(10, sizeof(int));
+}
+
+void loop() {
+	/* create two tasks one with higher priority than the other */
+	xTaskCreate(producer, "Producer", STACK_SIZE, NULL, 1, NULL);
+	xTaskCreate(consumer, "Consumer", STACK_SIZE, NULL, 1, NULL);
+
+	/* start scheduler */
+	vTaskStartScheduler();
+}
+
