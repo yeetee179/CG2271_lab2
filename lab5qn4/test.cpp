@@ -7,8 +7,8 @@
 
 #define STACK_SIZE 200
 
-xSemaphoreHandle semaphore0;
-xSemaphoreHandle semaphore1;
+xSemaphoreHandle semaphore0 = xSemaphoreCreateBinary();
+xSemaphoreHandle semaphore1 = xSemaphoreCreateBinary();
 
 void int0task(void *p){
 	while(1){
@@ -68,8 +68,6 @@ void setup() {
 	attachInterrupt(digitalPinToInterrupt(2), int1ISR, FALLING);
 	pinMode(7, OUTPUT);
 	pinMode(6, OUTPUT);
-	semaphore0 = xSemaphoreCreateBinary();
-	semaphore1 = xSemaphoreCreateBinary();
 }
 
 void loop() {

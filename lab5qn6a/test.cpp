@@ -25,13 +25,13 @@ void Producer(void *p)
 
 void Consumer(void *p)
 {
-	TickType_t wakeTime = xTaskGetTickCount();
+	TickType_t currentTime = xTaskGetTickCount();
 	while(1){
 		int potentioValue;
 		if(xQueueReceive(queue, &potentioValue, (TickType_t) 0)){
 			Serial.println(potentioValue);
 		}
-		vTaskDelayUntil(&wakeTime, 5000);
+		vTaskDelayUntil(&currentTime, 5000);
 	}
 }
 
@@ -47,16 +47,13 @@ void ProducerISR()
 }
 
 void setup() {
-	Serial.begin(115200);
 	attachInterrupt(digitalPinToInterrupt(3), ProducerISR, RISING);
+	Serial.begin(115200);
 }
 
 void loop() {
-	/* create two tasks one with higher priority than the other */
 	xTaskCreate(Producer, "Producer", STACK_SIZE, NULL, 1, NULL);
 	xTaskCreate(Consumer, "Consumer", STACK_SIZE, NULL, 1, NULL);
-
-	/* start scheduler */
 	vTaskStartScheduler();
 }
 
