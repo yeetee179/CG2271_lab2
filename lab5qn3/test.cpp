@@ -11,9 +11,10 @@ QueueHandle_t queue = xQueueCreate(2, 4);
 void serialPrint(void *p) {
 	while (1) {
 		int taskNum;
-		xQueueReceive( queue, &taskNum, ( TickType_t ) 10 );
+		if(xQueueReceive( queue, &taskNum, ( TickType_t ) 10 )){/////////////added if here/////////
 			Serial.print("Task ");
 			Serial.println(taskNum);
+		}
 	}
 }
 

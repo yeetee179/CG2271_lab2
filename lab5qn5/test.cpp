@@ -59,10 +59,19 @@ void Consumer(void *p){
 void ProducerISR(){
 	unsigned long current_interrupt_time = millis();
 	static unsigned long previous_Interrupt_time = 0;
+	static BaseType_t xHigherPriorityTaskWoken;
+
+	xHigherPriorityTaskWoken = pdFALSE;
+
 	if((current_interrupt_time - previous_Interrupt_time) > 200){
-		xSemaphoreGiveFromISR(semaphoreBinary, NULL);
+		xSemaphoreGiveFromISR(semaphoreBinary, &xHigherPriorityTaskWoken);
 	}
 	previous_Interrupt_time = current_interrupt_time;
+
+	if (xHigherPriorityTaskWoken == pdTRUE){
+		taskYIELD();
+	}
+
 }
 
 void setup() {
