@@ -186,4 +186,3 @@ void loop() {
 	xTaskCreate(DisplayInfoTask,"DisplayInforTask",STACK_SIZE,NULL,2,NULL);
 	vTaskStartScheduler();
 }
-

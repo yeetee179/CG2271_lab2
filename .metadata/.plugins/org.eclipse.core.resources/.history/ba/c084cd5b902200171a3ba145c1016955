@@ -16,6 +16,14 @@ SemaphoreHandle_t currentSpeedSemaphore = xSemaphoreCreateBinary();
 QueueHandle_t currentSpeedQueue = xQueueCreate(10, sizeof(int));
 QueueHandle_t distanceQueue = xQueueCreate(10, sizeof(int));
 
+
+//
+//void myDelay(int ms) {
+//	for(int i = 0; i< ms; i++){
+//		delayMicroseconds(1000);
+//	}
+
+
 void CurrentSpeedTask(void *p) {
 
 	while(1){
@@ -24,29 +32,44 @@ void CurrentSpeedTask(void *p) {
 			digitalWrite(6, LOW);
 			digitalWrite(7, LOW);
 			digitalWrite(8, LOW);
-			analogWrite(5,0);
+//			analogWrite(5,0);
 			xSemaphoreGive(currentSpeedSemaphore);
+//			xQueueSendToBack(speedMessageQueue, &speedValue, (TickType_t) 5);
+//			Serial.print("desired speed is ");
+//			Serial.println(desiredSpeed);
+//			Serial.println(distance);
 		}
 		if (currentSpeed == 1 && xSemaphoreTake(currentSpeedSemaphore,1)){
 			digitalWrite(6, HIGH);
 			digitalWrite(7, LOW);
 			digitalWrite(8, LOW);
-			analogWrite(5, 5);
+//			analogWrite(5, 5);
 			xSemaphoreGive(currentSpeedSemaphore);
+//			xQueueSendToBack(speedMessageQueue, &speedValue, (TickType_t) 5);
+//			Serial.print("desired speed is ");
+//			Serial.println(desiredSpeed);
+//			Serial.println(distance);
 		}
 		else if (currentSpeed == 2 && xSemaphoreTake(currentSpeedSemaphore,1)){
 			digitalWrite(6, HIGH);
 			digitalWrite(7, HIGH);
 			digitalWrite(8, LOW);
-			analogWrite(5,20);
+//			analogWrite(5,20);
 			xSemaphoreGive(currentSpeedSemaphore);
+//			xQueueSendToBack(speedMessageQueue, &speedValue, (TickType_t) 5);
+//			Serial.print("desired speed is ");
+//			Serial.println(desiredSpeed);
+//			Serial.println(distance);
 		}
 		else if (currentSpeed == 3 && xSemaphoreTake(currentSpeedSemaphore,1)){
 			digitalWrite(6, HIGH);
 			digitalWrite(7, HIGH);
 			digitalWrite(8, HIGH);
-			analogWrite(5, 55);
+//			analogWrite(5, 55);
 			xSemaphoreGive(currentSpeedSemaphore);
+//			Serial.print("desired speed is ");
+//			Serial.println(desiredSpeed);
+//			Serial.println(distance);
 		}
 		if (redLedFlag == 1){
 			redLedTime = xTaskGetTickCount();
@@ -141,6 +164,7 @@ void IncreaseSpeedISR(){
 	static BaseType_t xHigherPriorityTaskWoken;
 
 	if((currentInterruptTime - previousInterruptTime) > 500){
+//		if (desiredSpeedValue < 3 && xSemaphoreTakeFromISR (currentSpeedSemaphore, &xHigherPriorityTaskWoken)){
 		if (desiredSpeed < 3){
 			desiredSpeed++;
 		}
@@ -158,6 +182,7 @@ void DecreaseSpeedISR(){
 	static BaseType_t xHigherPriorityTaskWoken;
 
 	if((currentInterruptTime - previousInterruptTime) > 500){
+//		if (desiredSpeedValue >0 && xSemaphoreTakeFromISR (currentSpeedSemaphore, &xHigherPriorityTaskWoken)){
 		if (desiredSpeed > 0){
 			desiredSpeed--;
 		}

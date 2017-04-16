@@ -109,7 +109,7 @@ void PotentiometerReadingTask(void *p) {
 			currentSpeed = desiredSpeed;
     		xQueueSendToBack(currentSpeedQueue, &currentSpeed, (TickType_t) 5000);
 		}
-		vTaskDelayUntil(&currentTime, 1000);
+		vTaskDelayUntil(&currentTime, 100);
 	}
 }
 
@@ -186,4 +186,3 @@ void loop() {
 	xTaskCreate(DisplayInfoTask,"DisplayInforTask",STACK_SIZE,NULL,2,NULL);
 	vTaskStartScheduler();
 }
-

@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="currentSpeedSemaphore" key="selection"/>
+		<item value="currentTime" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="currentTime"/>
+			<item value="state"/>
 			<item value="speedValueSemaphore"/>
 			<item value="currentSpeedSemaphore"/>
 			<item value="speedValue"/>
 			<item value="semaphoreBinary"/>
 			<item value="semaphoreMutex"/>
 			<item value="mutexSemaphore"/>
-			<item value="wakeTime"/>
-			<item value="binarySemaphore"/>
 		</list>
 		<list key="replacehistory">
 			<item value="currentSpeedSemaphore"/>

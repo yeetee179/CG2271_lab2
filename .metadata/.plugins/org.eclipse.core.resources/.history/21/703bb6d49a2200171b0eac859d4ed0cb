@@ -16,6 +16,14 @@ SemaphoreHandle_t currentSpeedSemaphore = xSemaphoreCreateBinary();
 QueueHandle_t currentSpeedQueue = xQueueCreate(10, sizeof(int));
 QueueHandle_t distanceQueue = xQueueCreate(10, sizeof(int));
 
+
+//
+//void myDelay(int ms) {
+//	for(int i = 0; i< ms; i++){
+//		delayMicroseconds(1000);
+//	}
+
+
 void CurrentSpeedTask(void *p) {
 
 	while(1){
@@ -141,6 +149,7 @@ void IncreaseSpeedISR(){
 	static BaseType_t xHigherPriorityTaskWoken;
 
 	if((currentInterruptTime - previousInterruptTime) > 500){
+//		if (desiredSpeedValue < 3 && xSemaphoreTakeFromISR (currentSpeedSemaphore, &xHigherPriorityTaskWoken)){
 		if (desiredSpeed < 3){
 			desiredSpeed++;
 		}
@@ -158,6 +167,7 @@ void DecreaseSpeedISR(){
 	static BaseType_t xHigherPriorityTaskWoken;
 
 	if((currentInterruptTime - previousInterruptTime) > 500){
+//		if (desiredSpeedValue >0 && xSemaphoreTakeFromISR (currentSpeedSemaphore, &xHigherPriorityTaskWoken)){
 		if (desiredSpeed > 0){
 			desiredSpeed--;
 		}
@@ -186,4 +196,3 @@ void loop() {
 	xTaskCreate(DisplayInfoTask,"DisplayInforTask",STACK_SIZE,NULL,2,NULL);
 	vTaskStartScheduler();
 }
-

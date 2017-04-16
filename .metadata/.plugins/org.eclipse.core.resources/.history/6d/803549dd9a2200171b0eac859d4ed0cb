@@ -141,6 +141,7 @@ void IncreaseSpeedISR(){
 	static BaseType_t xHigherPriorityTaskWoken;
 
 	if((currentInterruptTime - previousInterruptTime) > 500){
+//		if (desiredSpeedValue < 3 && xSemaphoreTakeFromISR (currentSpeedSemaphore, &xHigherPriorityTaskWoken)){
 		if (desiredSpeed < 3){
 			desiredSpeed++;
 		}
@@ -158,6 +159,7 @@ void DecreaseSpeedISR(){
 	static BaseType_t xHigherPriorityTaskWoken;
 
 	if((currentInterruptTime - previousInterruptTime) > 500){
+//		if (desiredSpeedValue >0 && xSemaphoreTakeFromISR (currentSpeedSemaphore, &xHigherPriorityTaskWoken)){
 		if (desiredSpeed > 0){
 			desiredSpeed--;
 		}
@@ -186,4 +188,3 @@ void loop() {
 	xTaskCreate(DisplayInfoTask,"DisplayInforTask",STACK_SIZE,NULL,2,NULL);
 	vTaskStartScheduler();
 }
-
