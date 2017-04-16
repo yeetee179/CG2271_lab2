@@ -13,7 +13,8 @@ int potentioValue = 0;
 int distance = 0;
 int redLedFlag = 0; //0 is no brake, 1 is brake
 SemaphoreHandle_t currentSpeedSemaphore = xSemaphoreCreateBinary();
-QueueHandle_t speedMessageQueue = xQueueCreate(10, sizeof(int));
+QueueHandle_t currentSpeedQueue = xQueueCreate(10, sizeof(int));
+QueueHandle_t distanceQueue = xQueueCreate(10, sizeof(int));
 
 
 //
@@ -34,9 +35,9 @@ void CurrentSpeedTask(void *p) {
 //			analogWrite(5,0);
 			xSemaphoreGive(currentSpeedSemaphore);
 //			xQueueSendToBack(speedMessageQueue, &speedValue, (TickType_t) 5);
-			Serial.print("desired speed is ");
-			Serial.println(desiredSpeed);
-			Serial.println(distance);
+//			Serial.print("desired speed is ");
+//			Serial.println(desiredSpeed);
+//			Serial.println(distance);
 		}
 		if (currentSpeed == 1 && xSemaphoreTake(currentSpeedSemaphore,1)){
 			digitalWrite(6, HIGH);
@@ -45,9 +46,9 @@ void CurrentSpeedTask(void *p) {
 //			analogWrite(5, 5);
 			xSemaphoreGive(currentSpeedSemaphore);
 //			xQueueSendToBack(speedMessageQueue, &speedValue, (TickType_t) 5);
-			Serial.print("desired speed is ");
-			Serial.println(desiredSpeed);
-			Serial.println(distance);
+//			Serial.print("desired speed is ");
+//			Serial.println(desiredSpeed);
+//			Serial.println(distance);
 		}
 		else if (currentSpeed == 2 && xSemaphoreTake(currentSpeedSemaphore,1)){
 			digitalWrite(6, HIGH);
@@ -56,9 +57,9 @@ void CurrentSpeedTask(void *p) {
 //			analogWrite(5,20);
 			xSemaphoreGive(currentSpeedSemaphore);
 //			xQueueSendToBack(speedMessageQueue, &speedValue, (TickType_t) 5);
-			Serial.print("desired speed is ");
-			Serial.println(desiredSpeed);
-			Serial.println(distance);
+//			Serial.print("desired speed is ");
+//			Serial.println(desiredSpeed);
+//			Serial.println(distance);
 		}
 		else if (currentSpeed == 3 && xSemaphoreTake(currentSpeedSemaphore,1)){
 			digitalWrite(6, HIGH);
@@ -66,9 +67,9 @@ void CurrentSpeedTask(void *p) {
 			digitalWrite(8, HIGH);
 //			analogWrite(5, 55);
 			xSemaphoreGive(currentSpeedSemaphore);
-			Serial.print("desired speed is ");
-			Serial.println(desiredSpeed);
-			Serial.println(distance);
+//			Serial.print("desired speed is ");
+//			Serial.println(desiredSpeed);
+//			Serial.println(distance);
 		}
 		if (redLedFlag == 1){
 			redLedTime = xTaskGetTickCount();
@@ -96,40 +97,66 @@ void PotentiometerReadingTask(void *p) {
 		else if (potentioValue > 768 && potentioValue <=1023){
 			distance = 4; //distance = 4d
 		}
+		xQueueSendToBack(distanceQueue, &distance, (TickType_t) 5000);
 //////////////////////////////////////////////////////////////////////////////////////////////////
 		if (desiredSpeed == 3 && distance <4){
             currentSpeed = distance - 1;
+    		xQueueSendToBack(currentSpeedQueue, &currentSpeed, (TickType_t) 5000);
             redLedFlag = 1;
 		}
 		else if(desiredSpeed == 3 && distance >= 4){
 			currentSpeed = desiredSpeed;
+    		xQueueSendToBack(currentSpeedQueue, &currentSpeed, (TickType_t) 5000);
 		}
 
 		if (desiredSpeed == 2 && distance < 3){
             currentSpeed = distance - 1;
+    		xQueueSendToBack(currentSpeedQueue, &currentSpeed, (TickType_t) 5000);
             redLedFlag = 1;
 		}
 		else if(desiredSpeed == 2 && distance >= 3){
 			currentSpeed = desiredSpeed;
+    		xQueueSendToBack(currentSpeedQueue, &currentSpeed, (TickType_t) 5000);
 		}
 
 		if (desiredSpeed == 1 && distance < 2){
             currentSpeed = distance - 1;
+    		xQueueSendToBack(currentSpeedQueue, &currentSpeed, (TickType_t) 5000);
             redLedFlag = 1;
 		}
 		else if(desiredSpeed == 1 && distance >= 2){
 			currentSpeed = desiredSpeed;
+    		xQueueSendToBack(currentSpeedQueue, &currentSpeed, (TickType_t) 5000);
 		}
 		if (desiredSpeed == 0){
 			currentSpeed = desiredSpeed;
+    		xQueueSendToBack(currentSpeedQueue, &currentSpeed, (TickType_t) 5000);
 		}
 		vTaskDelayUntil(&currentTime, 1000);
 	}
 }
 
-//void DisplayInfoTask(void *p){
-//
-//}
+void DisplayInfoTask(void *p){
+    while(1){
+		TickType_t DisplayPeriod = xTaskGetTickCount();
+		int currentSpeedPrint;
+		int distancePrint;
+
+		Serial.print("desired speed is ");
+		Serial.println(desiredSpeed);
+
+		if(xQueueReceive(currentSpeedQueue, &currentSpeedPrint, (TickType_t) 0)){
+			Serial.print("current speed is ");
+			Serial.println(currentSpeedPrint);
+		}
+		if(xQueueReceive(distanceQueue, &distancePrint, (TickType_t) 0)){
+			Serial.print("distance is ");
+			Serial.println(distancePrint);
+		}
+		Serial.println();
+		vTaskDelayUntil(&DisplayPeriod, 1000);
+    }
+}
 
 void IncreaseSpeedISR(){
 	static unsigned long previousInterruptTime = 0;
@@ -167,7 +194,6 @@ void DecreaseSpeedISR(){
 	}
 }
 
-
 void setup() {
 	Serial.begin(115200);
 	pinMode(5, OUTPUT);//buzzer
@@ -181,8 +207,8 @@ void setup() {
 
 void loop() {
 	xTaskCreate(CurrentSpeedTask,"CurrentSpeedTask",STACK_SIZE,NULL,1,NULL);
-	xTaskCreate(PotentiometerReadingTask,"PotentiometerReadingTask",STACK_SIZE,NULL,2,NULL);
-//	xTaskCreate(DisplayInfoTask,"DisplayInforTask",STACK_SIZE,NULL,3,NULL);
+	xTaskCreate(PotentiometerReadingTask,"PotentiometerReadingTask",STACK_SIZE,NULL,3,NULL);
+	xTaskCreate(DisplayInfoTask,"DisplayInforTask",STACK_SIZE,NULL,2,NULL);
 	vTaskStartScheduler();
 }
 
