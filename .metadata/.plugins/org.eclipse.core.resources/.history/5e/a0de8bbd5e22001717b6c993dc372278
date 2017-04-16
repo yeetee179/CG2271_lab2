@@ -1,0 +1,163 @@
+
+#include <Arduino.h>
+#include <avr/io.h>
+#include <FreeRTOS.h>
+#include <task.h>
+#include <semphr.h>
+
+#define STACK_SIZE 100
+
+int desiredSpeed = 0;
+int currentSpeed = 0;
+int potentioValue = 0;
+int distance = 0;
+int redLedFlag = 0; //0 is no brake, 1 is brake
+SemaphoreHandle_t currentSpeedSemaphore = xSemaphoreCreateBinary();
+QueueHandle_t speedMessageQueue = xQueueCreate(10, sizeof(int));
+
+
+//
+//void myDelay(int ms) {
+//	for(int i = 0; i< ms; i++){
+//		delayMicroseconds(1000);
+//	}
+
+
+void CurrentSpeedTask(void *p) {
+
+	while(1){
+		TickType_t redLedTime;
+		if (currentSpeed == 0 && xSemaphoreTake(currentSpeedSemaphore,1)){
+			digitalWrite(6, LOW);
+			digitalWrite(7, LOW);
+			digitalWrite(8, LOW);
+//			analogWrite(5,0);
+			xSemaphoreGive(currentSpeedSemaphore);
+//			xQueueSendToBack(speedMessageQueue, &speedValue, (TickType_t) 5);
+			Serial.print("current speed is ");
+			Serial.println(currentSpeed);
+			Serial.println(distance);
+		}
+		if (currentSpeed == 1 && xSemaphoreTake(currentSpeedSemaphore,1)){
+			digitalWrite(6, HIGH);
+			digitalWrite(7, LOW);
+			digitalWrite(8, LOW);
+//			analogWrite(5, 5);
+			xSemaphoreGive(currentSpeedSemaphore);
+//			xQueueSendToBack(speedMessageQueue, &speedValue, (TickType_t) 5);
+			Serial.print("current speed is ");
+			Serial.println(currentSpeed);
+			Serial.println(distance);
+		}
+		else if (currentSpeed == 2 && xSemaphoreTake(currentSpeedSemaphore,1)){
+			digitalWrite(6, HIGH);
+			digitalWrite(7, HIGH);
+			digitalWrite(8, LOW);
+//			analogWrite(5,20);
+			xSemaphoreGive(currentSpeedSemaphore);
+//			xQueueSendToBack(speedMessageQueue, &speedValue, (TickType_t) 5);
+			Serial.print("current speed is ");
+			Serial.println(currentSpeed);
+			Serial.println(distance);
+		}
+		else if (currentSpeed == 3 && xSemaphoreTake(currentSpeedSemaphore,1)){
+			digitalWrite(6, HIGH);
+			digitalWrite(7, HIGH);
+			digitalWrite(8, HIGH);
+//			analogWrite(5, 55);
+			xSemaphoreGive(currentSpeedSemaphore);
+			Serial.print("current speed is ");
+			Serial.println(currentSpeed);
+			Serial.println(distance);
+		}
+		if (redLedFlag == 1){
+			redLedTime = xTaskGetTickCount();
+			digitalWrite(9, HIGH);
+			vTaskDelayUntil(&redLedTime, 1000);
+			digitalWrite(9, LOW);
+			redLedFlag = 0;
+		}
+	}
+}
+
+void PotentiometerReadingTask(void *p) {
+	while(1){
+		TickType_t currentTime = xTaskGetTickCount();
+		potentioValue = analogRead(0);
+		if (potentioValue <= 256){
+			distance = 1; //distance = d
+		}
+		else if (potentioValue > 256 && potentioValue <=512 ){
+			distance = 2; //distance = 2d
+		}
+		else if (potentioValue > 512 && potentioValue <= 768){
+			distance = 3; //distance = 3d
+		}
+		else if (potentioValue > 768 && potentioValue <=1023){
+			distance = 4; //distance = 4d
+		}
+		if (desiredSpeed == 3 && distance <4){
+            currentSpeed = distance - 1;
+		}
+		vTaskDelayUntil(&currentTime, 1000);
+	}
+}
+
+
+void IncreaseSpeedISR(){
+	static unsigned long previousInterruptTime = 0;
+	unsigned long currentInterruptTime = millis();
+	static BaseType_t xHigherPriorityTaskWoken;
+
+	if((currentInterruptTime - previousInterruptTime) > 500){
+//		if (desiredSpeedValue < 3 && xSemaphoreTakeFromISR (currentSpeedSemaphore, &xHigherPriorityTaskWoken)){
+		if (desiredSpeed < 3){
+			desiredSpeed++;
+		}
+		previousInterruptTime = currentInterruptTime;
+		xSemaphoreGiveFromISR(currentSpeedSemaphore, &xHigherPriorityTaskWoken);
+	}
+	if (xHigherPriorityTaskWoken == pdTRUE){
+		taskYIELD();
+	}
+}
+
+void DecreaseSpeedISR(){
+	static unsigned long previousInterruptTime = 0;
+	unsigned long currentInterruptTime = millis();
+	static BaseType_t xHigherPriorityTaskWoken;
+
+	if((currentInterruptTime - previousInterruptTime) > 500){
+//		if (desiredSpeedValue >0 && xSemaphoreTakeFromISR (currentSpeedSemaphore, &xHigherPriorityTaskWoken)){
+		if (desiredSpeed > 0){
+			desiredSpeed--;
+		}
+		previousInterruptTime = currentInterruptTime;
+		xSemaphoreGiveFromISR(currentSpeedSemaphore, &xHigherPriorityTaskWoken);
+	}
+	if (xHigherPriorityTaskWoken == pdTRUE){
+		taskYIELD();
+	}
+}
+
+
+void setup() {
+	Serial.begin(115200);
+	pinMode(5, OUTPUT);//buzzer
+	pinMode(6, OUTPUT);//yellow led 1
+	pinMode(7, OUTPUT);//yellow led 2
+	pinMode(8, OUTPUT);//yellow led 3
+	pinMode(9, OUTPUT);//red led
+	attachInterrupt(digitalPinToInterrupt(3), IncreaseSpeedISR, FALLING);
+	attachInterrupt(digitalPinToInterrupt(2), DecreaseSpeedISR, FALLING);
+}
+
+void loop() {
+//	xTaskCreate(BuzzerTask,"BuzzerTask",STACK_SIZE,NULL,3,NULL);
+//	xTaskCreate(ReadPotentioTask,"ReadPotentioTask",STACK_SIZE,NULL,2,NULL);
+	xTaskCreate(CurrentSpeedTask,"CurrentSpeedTask",STACK_SIZE,NULL,2,NULL);
+	xTaskCreate(PotentiometerReadingTask,"PotentiometerReadingTask",STACK_SIZE,NULL,3,NULL);
+//	xTaskCreate(CalculationTask,"CalculationTask",STACK_SIZE,NULL,1,NULL);
+	vTaskStartScheduler();
+}
+
