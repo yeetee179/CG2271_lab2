@@ -1,0 +1,163 @@
+
+#include <Arduino.h>
+#include <avr/io.h>
+#include <FreeRTOS.h>
+#include <task.h>
+#include <semphr.h>
+
+#define STACK_SIZE 100
+
+int speedValue = 0;
+int potentioValue = 0;
+SemaphoreHandle_t speedValueSemaphore = xSemaphoreCreateBinary();
+QueueHandle_t speedMessageQueue = xQueueCreate(10, sizeof(int));
+
+
+//
+//void myDelay(int ms) {
+//	for(int i = 0; i< ms; i++){
+//		delayMicroseconds(1000);
+//	}
+//}
+//
+//int remapPotentialMeter(int val){
+//	int revised_val;
+//	revised_val = val/4;
+//	return revised_val;
+//}
+//
+
+//
+//void ReadPotentioTask(void *p) {
+//	static int potentioMeterValue = 0;
+//	int rawPotentioMeterValue;
+//	while(1){
+//		rawPotentioMeterValue = analogRead(0); //this value is shared
+//		if (rawPotentioMeterValue <= 256 ){
+//			potentioMeterValue = 1;
+//		}
+//		else if (rawPotentioMeterValue <= 256 && rawPotentioMeterValue <= 512 ){
+//			potentioMeterValue = 2;
+//		}
+//		else if (rawPotentioMeterValue <= 512 && rawPotentioMeterValue < 768 ){
+//			potentioMeterValue = 3;
+//		}
+//		else if (rawPotentioMeterValue < 768 && rawPotentioMeterValue < 1023 ){
+//			potentioMeterValue = 4;
+//		}
+//	}
+//}
+
+
+void CurrentSpeedTask(void *p) {
+	while(1){
+		if (speedValue == 0 && xSemaphoreTake(speedValueSemaphore,1)){
+			digitalWrite(6, LOW);
+			digitalWrite(7, LOW);
+			digitalWrite(8, LOW);
+			analogWrite(5,0);
+			xSemaphoreGive(speedValueSemaphore);
+//			xQueueSendToBack(speedMessageQueue, &speedValue, (TickType_t) 5);
+			Serial.print("current speed is ");
+			Serial.println(speedValue);
+			Serial.println(potentioValue);
+		}
+		if (speedValue == 1 && xSemaphoreTake(speedValueSemaphore,1)){
+			digitalWrite(6, HIGH);
+			digitalWrite(7, LOW);
+			digitalWrite(8, LOW);
+			analogWrite(5, 5);
+			xSemaphoreGive(speedValueSemaphore);
+//			xQueueSendToBack(speedMessageQueue, &speedValue, (TickType_t) 5);
+			Serial.print("current speed is ");
+			Serial.println(speedValue);
+			Serial.println(potentioValue);
+		}
+		else if (speedValue == 2 && xSemaphoreTake(speedValueSemaphore,1)){
+			digitalWrite(6, HIGH);
+			digitalWrite(7, HIGH);
+			digitalWrite(8, LOW);
+			analogWrite(5,20);
+			xSemaphoreGive(speedValueSemaphore);
+//			xQueueSendToBack(speedMessageQueue, &speedValue, (TickType_t) 5);
+			Serial.print("current speed is ");
+			Serial.println(speedValue);
+			Serial.println(potentioValue);
+		}
+		else if (speedValue == 3 && xSemaphoreTake(speedValueSemaphore,1)){
+			digitalWrite(6, HIGH);
+			digitalWrite(7, HIGH);
+			digitalWrite(8, HIGH);
+			analogWrite(5, 55);
+			xSemaphoreGive(speedValueSemaphore);
+			Serial.print("current speed is ");
+			Serial.println(speedValue);
+			Serial.println(potentioValue);
+		}
+	}
+}
+
+void PotentiometerReadingTask(void *p) {
+	while(1){
+		TickType_t currentTime = xTaskGetTickCount();
+			potentioValue = analogRead(0);
+			vTaskDelayUntil(&currentTime, 1000);
+	}
+}
+
+
+void IncreaseSpeedISR(){
+	static unsigned long previousInterruptTime = 0;
+	unsigned long currentInterruptTime = millis();
+	static BaseType_t xHigherPriorityTaskWoken;
+
+	if((currentInterruptTime - previousInterruptTime) > 500){
+		if (speedValue < 3 && xSemaphoreTakeFromISR (speedValueSemaphore, &xHigherPriorityTaskWoken)){
+			speedValue++;
+		}
+		previousInterruptTime = currentInterruptTime;
+		xSemaphoreGiveFromISR(speedValueSemaphore, &xHigherPriorityTaskWoken);
+	}
+	if (xHigherPriorityTaskWoken == pdTRUE){
+		taskYIELD();
+	}
+}
+
+void DecreaseSpeedISR(){
+	static unsigned long previousInterruptTime = 0;
+	unsigned long currentInterruptTime = millis();
+	static BaseType_t xHigherPriorityTaskWoken;
+
+	if((currentInterruptTime - previousInterruptTime) > 500){
+		if (speedValue >0 && xSemaphoreTakeFromISR (speedValueSemaphore, &xHigherPriorityTaskWoken)){
+			speedValue--;
+		}
+		previousInterruptTime = currentInterruptTime;
+		xSemaphoreGiveFromISR(speedValueSemaphore, &xHigherPriorityTaskWoken);
+	}
+	if (xHigherPriorityTaskWoken == pdTRUE){
+		taskYIELD();
+	}
+}
+
+
+void setup() {
+	Serial.begin(115200);
+	pinMode(5, OUTPUT);//buzzer
+	pinMode(6, OUTPUT);//yellow led 1
+	pinMode(7, OUTPUT);//yellow led 2
+	pinMode(8, OUTPUT);//yellow led 3
+	pinMode(9, OUTPUT);//red led
+	attachInterrupt(digitalPinToInterrupt(3), IncreaseSpeedISR, FALLING);
+	attachInterrupt(digitalPinToInterrupt(2), DecreaseSpeedISR, FALLING);
+}
+
+void loop() {
+//	xTaskCreate(BuzzerTask,"BuzzerTask",STACK_SIZE,NULL,3,NULL);
+//	xTaskCreate(ReadPotentioTask,"ReadPotentioTask",STACK_SIZE,NULL,2,NULL);
+	xTaskCreate(CurrentSpeedTask,"CurrentSpeedTask",STACK_SIZE,NULL,1,NULL);
+	xTaskCreate(PotentiometerReadingTask,"EngiPotentiometerReadingTaskneTask",STACK_SIZE,NULL,2,NULL);
+	xTaskCreate(DistanceCalculationTask,"DistanceCalculationTask",STACK_SIZE,NULL,2,NULL);
+	vTaskStartScheduler();
+}
+
