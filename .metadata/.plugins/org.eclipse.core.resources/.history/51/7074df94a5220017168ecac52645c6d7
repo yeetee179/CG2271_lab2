@@ -59,7 +59,6 @@ void CurrentSpeedTask(void *p) {
 }
 
 void PotentiometerReadingTask(void *p) {
-	int temp;
 	while(1){
 		TickType_t currentTime = xTaskGetTickCount();
 		potentioValue = analogRead(0);
@@ -110,8 +109,7 @@ void PotentiometerReadingTask(void *p) {
 			currentSpeed = desiredSpeed;
     		xQueueSendToBack(currentSpeedQueue, &currentSpeed, (TickType_t) 5000);
 		}
-
-		vTaskDelayUntil(&currentTime, 500);
+		vTaskDelayUntil(&currentTime, 1000);
 	}
 }
 
@@ -133,7 +131,7 @@ void DisplayInfoTask(void *p){
 			Serial.println(distancePrint);
 		}
 		Serial.println();
-		vTaskDelayUntil(&DisplayPeriod, 500);
+		vTaskDelayUntil(&DisplayPeriod, 1000);
     }
 }
 
