@@ -78,9 +78,6 @@ void PotentiometerReadingTask(void *p) {
 		xQueueSendToBack(distanceQueue, &distance, (TickType_t) 5000);
 //////////////////////////////////////////////////////////////////////////////////////////////////
 		if (desiredSpeed == 3 && distance <4){
-			if (currentSpeed == distance){
-				redLedFlag = 1;
-			}
 			currentSpeed = distance - 1;
     		xQueueSendToBack(currentSpeedQueue, &currentSpeed, (TickType_t) 5000);
 		}
@@ -90,9 +87,6 @@ void PotentiometerReadingTask(void *p) {
 		}
 
 		if (desiredSpeed == 2 && distance < 3){
-			if (currentSpeed == distance){
-				redLedFlag = 1;
-			}
 			currentSpeed = distance - 1;
     		xQueueSendToBack(currentSpeedQueue, &currentSpeed, (TickType_t) 5000);
 		}
@@ -102,9 +96,6 @@ void PotentiometerReadingTask(void *p) {
 		}
 
 		if (desiredSpeed == 1 && distance < 2){
-			if (currentSpeed == distance){
-				redLedFlag = 1;
-			}
 			currentSpeed = distance - 1;
     		xQueueSendToBack(currentSpeedQueue, &currentSpeed, (TickType_t) 5000);
 		}
